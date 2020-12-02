@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\AZ_6G.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\AZ_6G.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Nov 30 16:16:03 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Dec 02 16:19:14 2020
 <BR><P>
 <H3>Maximum Stack Usage =        184 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -377,10 +377,10 @@ Global Symbols
 <P><STRONG><a name="[f6]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[b2]"></a>Apply</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, apply.o(i.Apply))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Apply &rArr; UartTimeout &rArr; UartDatePro &rArr; USART_FuncCmd
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Apply &rArr; UartRev &rArr; UartPro &rArr; USART_FuncCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartTimeout
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartRev
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1259,11 +1259,11 @@ Global Symbols
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetFlagStatus
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetClockFreq
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_Unlock
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_SetLatency
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_Lock
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_InstructionCacheCmd
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1328,13 +1328,13 @@ Global Symbols
 <P><STRONG><a name="[dc]"></a>UARTInit</STRONG> (Thumb, 308 bytes, Stack size 32 bytes, init.o(i.UARTInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = UARTInit &rArr; USART_SetBaudrate &rArr; SetScBaudrate &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetFunc
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EnableIRQ
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_ClearPendingIRQ
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetFunc
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enIrqRegistration
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_Fcg1PeriphClockCmd
 </UL>
@@ -1350,9 +1350,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartTxIrqCallback
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartTxCmpltIrqCallback
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartRxIrqCallback
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTInit
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartDatePro
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartPro
 </UL>
 
 <P><STRONG><a name="[e2]"></a>USART_GetStatus</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, hc32f46x_usart.o(i.USART_GetStatus))
@@ -1364,7 +1363,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e5]"></a>USART_SendData</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, hc32f46x_usart.o(i.USART_SendData))
-<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartTxIrqCallback
+<BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartTxCmpltIrqCallback
 </UL>
 
 <P><STRONG><a name="[df]"></a>USART_SetBaudrate</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, hc32f46x_usart.o(i.USART_SetBaudrate))
@@ -1383,18 +1382,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTInit
 </UL>
 
-<P><STRONG><a name="[e1]"></a>UartDatePro</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, apply.o(i.UartDatePro))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UartDatePro &rArr; USART_FuncCmd
+<P><STRONG><a name="[e1]"></a>UartPro</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, apply.o(i.UartPro))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UartPro &rArr; USART_FuncCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartTimeout
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartRev
 </UL>
 
-<P><STRONG><a name="[b3]"></a>UartTimeout</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, apply.o(i.UartTimeout))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = UartTimeout &rArr; UartDatePro &rArr; USART_FuncCmd
+<P><STRONG><a name="[b3]"></a>UartRev</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, apply.o(i.UartRev))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = UartRev &rArr; UartPro &rArr; USART_FuncCmd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartDatePro
+<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartPro
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Apply
 </UL>
@@ -1412,26 +1411,25 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> init.o(i.UARTInit)
 </UL>
-<P><STRONG><a name="[9e]"></a>UsartRxIrqCallback</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, isr.o(i.UsartRxIrqCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UsartRxIrqCallback &rArr; USART_FuncCmd
+<P><STRONG><a name="[9e]"></a>UsartRxIrqCallback</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, isr.o(i.UsartRxIrqCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = UsartRxIrqCallback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RecData
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> init.o(i.UARTInit)
 </UL>
-<P><STRONG><a name="[a1]"></a>UsartTxCmpltIrqCallback</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, isr.o(i.UsartTxCmpltIrqCallback))
+<P><STRONG><a name="[a1]"></a>UsartTxCmpltIrqCallback</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, isr.o(i.UsartTxCmpltIrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UsartTxCmpltIrqCallback &rArr; USART_FuncCmd
-</UL>
-<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> init.o(i.UARTInit)
-</UL>
-<P><STRONG><a name="[a0]"></a>UsartTxIrqCallback</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, isr.o(i.UsartTxIrqCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UsartTxIrqCallback &rArr; USART_FuncCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> init.o(i.UARTInit)
+</UL>
+<P><STRONG><a name="[a0]"></a>UsartTxIrqCallback</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, isr.o(i.UsartTxIrqCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = UsartTxIrqCallback &rArr; USART_FuncCmd
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> init.o(i.UARTInit)
 </UL>
@@ -1486,16 +1484,16 @@ Local Symbols
 <P><STRONG><a name="[c1]"></a>SetClkSyncBaudrate</STRONG> (Thumb, 278 bytes, Stack size 64 bytes, hc32f46x_usart.o(i.SetClkSyncBaudrate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = SetClkSyncBaudrate &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartGetClk
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
@@ -1503,16 +1501,16 @@ Local Symbols
 <P><STRONG><a name="[c7]"></a>SetScBaudrate</STRONG> (Thumb, 328 bytes, Stack size 96 bytes, hc32f46x_usart.o(i.SetScBaudrate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = SetScBaudrate &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartGetClk
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
@@ -1520,16 +1518,16 @@ Local Symbols
 <P><STRONG><a name="[c8]"></a>SetUartBaudrate</STRONG> (Thumb, 348 bytes, Stack size 80 bytes, hc32f46x_usart.o(i.SetUartBaudrate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = SetUartBaudrate &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsartGetClk
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>

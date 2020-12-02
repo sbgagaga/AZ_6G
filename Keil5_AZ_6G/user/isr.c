@@ -9,12 +9,14 @@ uint8_t time10msflag=0;
 uint8_t k=0;
 /*uart-Tx*/
 uint8_t UartRxFlag=0,UartRxTimeCnt=0;
-uint8_t RxDateBuf[64]={0};
+uint8_t RxDateBuf[30]={0};
 uint8_t RxDateLen=0;
 uint8_t RxDateIndex=0;
+uint8_t PackNumb=0;
+uint8_t MsgIden=0;
 
 /*uart-Rx*/
-uint8_t TxDateBuf[64]={0};
+uint8_t TxDateBuf[30]={0};
 uint8_t TxDateLen=0;
 uint8_t TxDateIndex=0;
 
@@ -44,14 +46,10 @@ void Timer0B_CallBack()
 /*UART3∂¡÷–∂œ*/
 void UsartRxIrqCallback()
 {
-//	RxDateBuf[RxDateIndex] = (uint8_t)USART_RecData(USART_CH);
-//	UartRxTimeCnt=0;
-//	UartRxFlag=1;
-//	RxDateIndex++;
-//	RxDateLen++;
-	k=USART_RecData(USART_CH);
-	k++;
-	USART_FuncCmd(USART_CH, UsartTxAndTxEmptyInt, Enable);
+	RxDateBuf[RxDateIndex] = (uint8_t)USART_RecData(USART_CH);
+	UartRxTimeCnt=0;
+	UartRxFlag=1;
+	RxDateIndex++;
 }
 
 /*UART3∂¡¥ÌŒÛ÷–∂œ*/
@@ -84,29 +82,25 @@ void UsartErrIrqCallback()
 
 void UsartTxIrqCallback()
 {
-	USART_SendData(USART_CH, k);
     USART_FuncCmd(USART_CH, UsartTxEmptyInt, Disable);
     USART_FuncCmd(USART_CH, UsartTxCmpltInt, Enable);
 }
 
 void UsartTxCmpltIrqCallback()
 {
-//	if(TxDateLen!=0)
-//	{
-//		
-//		USART_SendData(USART_CH, TxDateBuf[TxDateIndex]);
-//		TxDateLen--;
-//		TxDateIndex++;
-//	}
-//	else
-//	{
-//		TxDateIndex=0;
-//		USART_FuncCmd(USART_CH, UsartTxCmpltInt, Disable);
-//		USART_FuncCmd(USART_CH, UsartTx, Disable);
-//	}
-    
-	USART_FuncCmd(USART_CH, UsartTxCmpltInt, Disable);
-	USART_FuncCmd(USART_CH, UsartTx, Disable);
+	if(TxDateLen!=0)
+	{
+		
+		USART_SendData(USART_CH, TxDateBuf[TxDateIndex]);
+		TxDateLen--;
+		TxDateIndex++;
+	}
+	else
+	{
+		TxDateIndex=0;
+		USART_FuncCmd(USART_CH, UsartTxCmpltInt, Disable);
+		USART_FuncCmd(USART_CH, UsartTx, Disable);
+	}
 }
 
 

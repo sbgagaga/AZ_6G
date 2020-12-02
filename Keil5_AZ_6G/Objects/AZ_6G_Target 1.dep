@@ -709,8 +709,8 @@ I (.\cmsis\Include\core_cmSimd.h)(0x5E685F76)
 I (.\device\common\system_hc32f46x.h)(0x5E57E4C6)
 I (.\device\common\ddl_config.h)(0x5F69A501)
 I (.\driver\inc\hc32f46x_utility.h)(0x5E57E4C6)
-F (.\user\Apply.c)(0x5FC4A796)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\apply.o --omf_browse .\objects\apply.crf --depend .\objects\apply.d)
-I (user\Apply.h)(0x5FC495FC)
+F (.\user\Apply.c)(0x5FC74DDE)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\apply.o --omf_browse .\objects\apply.crf --depend .\objects\apply.d)
+I (user\Apply.h)(0x5FC74A26)
 I (.\device\common\hc32_ddl.h)(0x5E57E4C6)
 I (.\device\common\hc32_common.h)(0x5EDA1DAC)
 I (D:\LoadDown\Kile\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
@@ -741,11 +741,11 @@ I (.\driver\inc\hc32f46x_usart.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_utility.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_wdt.h)(0x5E57E4C6)
 I (user\init.h)(0x5FC2045A)
-I (user\isr.h)(0x5FC49737)
-F (.\user\Apply.h)(0x5FC495FC)()
-F (.\user\init.c)(0x5FC47DD7)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
+I (user\isr.h)(0x5FC74A26)
+F (.\user\Apply.h)(0x5FC74A26)()
+F (.\user\init.c)(0x5FC74C1A)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
 I (user\init.h)(0x5FC2045A)
-I (user\Apply.h)(0x5FC495FC)
+I (user\Apply.h)(0x5FC74A26)
 I (.\device\common\hc32_ddl.h)(0x5E57E4C6)
 I (.\device\common\hc32_common.h)(0x5EDA1DAC)
 I (D:\LoadDown\Kile\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
@@ -775,11 +775,11 @@ I (.\driver\inc\hc32f46x_timer0.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_usart.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_utility.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_wdt.h)(0x5E57E4C6)
-I (user\isr.h)(0x5FC49737)
+I (user\isr.h)(0x5FC74A26)
 F (.\user\init.h)(0x5FC2045A)()
-F (.\user\isr.c)(0x5FC4AA23)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\isr.o --omf_browse .\objects\isr.crf --depend .\objects\isr.d)
-I (user\isr.h)(0x5FC49737)
-I (user\Apply.h)(0x5FC495FC)
+F (.\user\isr.c)(0x5FC5B74E)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\isr.o --omf_browse .\objects\isr.crf --depend .\objects\isr.d)
+I (user\isr.h)(0x5FC74A26)
+I (user\Apply.h)(0x5FC74A26)
 I (.\device\common\hc32_ddl.h)(0x5E57E4C6)
 I (.\device\common\hc32_common.h)(0x5EDA1DAC)
 I (D:\LoadDown\Kile\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
@@ -810,9 +810,9 @@ I (.\driver\inc\hc32f46x_usart.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_utility.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_wdt.h)(0x5E57E4C6)
 I (user\init.h)(0x5FC2045A)
-F (.\user\isr.h)(0x5FC49737)()
+F (.\user\isr.h)(0x5FC74A26)()
 F (.\user\main.c)(0x5FC483B8)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -W -O0 --apcs=interwork --split_sections -I .\cmsis\Include -I .\device\common -I .\driver\inc -I .\user-I.\RTE\_Target_1-ID:\LoadDown\Kile\ARM\PACK\HDSC\HC32F46x\1.0.2\Device\Include-ID:\LoadDown\Kile\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DHC32F46x -DUSE_DEVICE_DRIVER_LIB -DCS9511_CONFIG -DPLAT_HC32D391-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (user\Apply.h)(0x5FC495FC)
+I (user\Apply.h)(0x5FC74A26)
 I (.\device\common\hc32_ddl.h)(0x5E57E4C6)
 I (.\device\common\hc32_common.h)(0x5EDA1DAC)
 I (D:\LoadDown\Kile\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
@@ -843,4 +843,4 @@ I (.\driver\inc\hc32f46x_usart.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_utility.h)(0x5E57E4C6)
 I (.\driver\inc\hc32f46x_wdt.h)(0x5E57E4C6)
 I (user\init.h)(0x5FC2045A)
-I (user\isr.h)(0x5FC49737)
+I (user\isr.h)(0x5FC74A26)

@@ -2,16 +2,12 @@
 
 uint16_t temp=0,temp1=0;
 
-
-uint16_t UartTxBuf[32]={0};
-uint8_t Txlen=0;
-
 void Apply()
 {
 	if(time2msflag==1)
 	{
 		time2msflag=0;
-		UartTimeout();
+		UartRev();
 	}
 	if(time5msflag==1)
 	{
@@ -57,33 +53,42 @@ void led()
 	}
 }
 
-void UartDatePro()
-{
-	uint8_t index=0;
-	TxDateLen=RxDateLen;
-	while(RxDateLen--)
-	{
-		TxDateBuf[index]=(RxDateBuf[index]+1);
-		index++;
-	}
-	RxDateLen=0;
-	USART_FuncCmd(USART_CH, UsartTxAndTxEmptyInt, Enable);
-}
-
-void UartTimeout()
+void UartRev()
 {
 	if(UartRxFlag)
 	{
 		UartRxTimeCnt++;
-		if(UartRxTimeCnt>=2)
+		if(UartRxTimeCnt>=4)//超过最多8mS未接受到UART数据，即接收到完整的一帧
 		{
 			UartRxTimeCnt=0;
 			UartRxFlag=0;
-			RxDateIndex=0;
-			UartDatePro();
+			UartPro();
 		}
 	}
 }
+
+void UartPro()
+{
+	TxDateLen=RxDateIndex;
+	RxDateIndex=0;
+	for(int i=0;i<TxDateLen;i++)
+	{
+		TxDateBuf[i]=RxDateBuf[i]+1;
+	}
+	USART_FuncCmd(USART_CH, UsartTxAndTxEmptyInt, Enable);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

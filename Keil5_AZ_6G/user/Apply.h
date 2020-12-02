@@ -7,8 +7,8 @@
 
 void Apply();
 void led();
-void UartDatePro();
-void UartTimeout();
+void UartRev();
+void UartPro();
 
 #endif
 

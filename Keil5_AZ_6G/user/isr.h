@@ -11,12 +11,12 @@ extern uint8_t time10msflag;
 /*uart-Rx*/
 extern uint8_t UartRxFlag;
 extern uint8_t UartRxTimeCnt;
-extern uint8_t RxDateBuf[64];
+extern uint8_t RxDateBuf[30];
 extern uint8_t RxDateLen;
 extern uint8_t RxDateIndex;
 
 /*uart-Tx*/
-extern uint8_t TxDateBuf[64];
+extern uint8_t TxDateBuf[30];
 extern uint8_t TxDateLen;
 extern uint8_t TxDateIndex;
 
