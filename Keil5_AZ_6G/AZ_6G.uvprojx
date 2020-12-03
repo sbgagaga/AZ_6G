@@ -10,20 +10,19 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>HC32F460PETB</Device>
+          <Device>HC32L110C6PA</Device>
           <Vendor>HDSC</Vendor>
-          <PackID>HDSC.HC32F46x.1.0.2</PackID>
+          <PackID>HDSC.HC32L110.1.0.3</PackID>
           <PackURL>https://raw.githubusercontent.com/hdscmcu/pack/master/</PackURL>
-          <Cpu>IRAM(0x1FFF8000,0x2F000) IRAM2(0x200F0000,0x1000) IROM(0x00000000,0x80000) IROM2(0x03000C00,0x003C0) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IRAM(0x20000000,0x1000) IROM(0x00000000,0x8000) CPUTYPE("Cortex-M0+") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD1FFF8000 -FC1000 -FN2 -FF0HC32F46x -FS00 -FL080000 -FF1HC32F46x_otp -FS13000C00 -FL13C0 -FP0($$Device:HC32F460PETB$Flash\HC32F46x.FLM) -FP1($$Device:HC32F460PETB$Flash\HC32F46x_otp.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0HC32L110B6_C6 -FS00 -FL08000 -FP0($$Device:HC32L110C6PA$Flash\HC32L110B6_C6.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:HC32F460PETB$Device\Include\hc32f460p.h</RegisterFile>
+          <RegisterFile>$$Device:HC32L110C6PA$Device\Include\HC32L110C.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,8 +32,8 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:HC32F460PETB$SVD\HC32F460P.SFR</SFDFile>
-          <bCustSvd>1</bCustSvd>
+          <SFDFile>$$Device:HC32L110C6PA$SVD\HC32L110C.SFR</SFDFile>
+          <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
@@ -48,14 +47,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\Objects\</OutputDirectory>
+          <OutputDirectory>.\</OutputDirectory>
           <OutputName>AZ_6G</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\Listings\</ListingPath>
+          <ListingPath>.\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -82,8 +81,8 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>fromelf --bin ".\obj\@L.axf" --output ".\bin\@L.bin"</UserProg1Name>
-            <UserProg2Name>fromelf --text -c ".\obj\@L.axf" --output ".\obj\@L.txt"</UserProg2Name>
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -110,13 +109,13 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments>  -MPU</SimDllArguments>
-          <SimDlgDll>DCM.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM4</SimDlgDllArguments>
+          <SimDllArguments>  </SimDllArguments>
+          <SimDlgDll>DARMCM1.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pCM0+</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments> -MPU</TargetDllArguments>
-          <TargetDlgDll>TCM.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pCM4</TargetDlgDllArguments>
+          <TargetDllArguments> </TargetDllArguments>
+          <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
+          <TargetDlgDllArguments>-pCM0+</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -126,6 +125,47 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
+          <Simulator>
+            <UseSimulator>0</UseSimulator>
+            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <RunToMain>1</RunToMain>
+            <RestoreBreakpoints>1</RestoreBreakpoints>
+            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreFunctions>1</RestoreFunctions>
+            <RestoreToolbox>1</RestoreToolbox>
+            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
+          </Simulator>
+          <Target>
+            <UseTarget>1</UseTarget>
+            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <RunToMain>1</RunToMain>
+            <RestoreBreakpoints>1</RestoreBreakpoints>
+            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreFunctions>0</RestoreFunctions>
+            <RestoreToolbox>1</RestoreToolbox>
+            <RestoreTracepoints>1</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
+          </Target>
+          <RunDebugAfterBuild>0</RunDebugAfterBuild>
+          <TargetSelection>0</TargetSelection>
+          <SimDlls>
+            <CpuDll></CpuDll>
+            <CpuDllArguments></CpuDllArguments>
+            <PeripheralDll></PeripheralDll>
+            <PeripheralDllArguments></PeripheralDllArguments>
+            <InitializationFile></InitializationFile>
+          </SimDlls>
+          <TargetDlls>
+            <CpuDll></CpuDll>
+            <CpuDllArguments></CpuDllArguments>
+            <PeripheralDll></PeripheralDll>
+            <PeripheralDllArguments></PeripheralDllArguments>
+            <InitializationFile></InitializationFile>
+            <Driver>BIN\UL2CM3.DLL</Driver>
+          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -133,15 +173,15 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <Capability>0</Capability>
+            <DriverSelection>-1</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
-          <pFcarmGrp>cmsis</pFcarmGrp>
+          <pFcarmGrp></pFcarmGrp>
           <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
@@ -160,7 +200,7 @@
             <ldXref>1</ldXref>
             <BigEnd>0</BigEnd>
             <AdsALst>1</AdsALst>
-            <AdsACrf>0</AdsACrf>
+            <AdsACrf>1</AdsACrf>
             <AdsANop>0</AdsANop>
             <AdsANot>0</AdsANot>
             <AdsLLst>1</AdsLLst>
@@ -174,7 +214,7 @@
             <AdsLsxf>1</AdsLsxf>
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
-            <AdsCpuType>"Cortex-M4"</AdsCpuType>
+            <AdsCpuType>"Cortex-M0+"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
@@ -183,17 +223,17 @@
             <hadIRAM>1</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
-            <RvdsVP>1</RvdsVP>
+            <RvdsVP>0</RvdsVP>
             <RvdsMve>0</RvdsMve>
-            <hadIRAM2>1</hadIRAM2>
-            <hadIROM2>1</hadIROM2>
+            <hadIRAM2>0</hadIRAM2>
+            <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
-            <RwSelD>4</RwSelD>
+            <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
@@ -244,13 +284,13 @@
               </Ocm6>
               <IRAM>
                 <Type>0</Type>
-                <StartAddress>0x1fff8000</StartAddress>
-                <Size>0x2f000</Size>
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x1000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x80000</Size>
+                <Size>0x8000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -258,29 +298,29 @@
                 <Size>0x0</Size>
               </XRAM>
               <OCR_RVCT1>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT1>
               <OCR_RVCT2>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT2>
               <OCR_RVCT3>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x80000</Size>
+                <Size>0x8000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
-                <Type>1</Type>
-                <StartAddress>0x3000c00</StartAddress>
-                <Size>0x3c0</Size>
+                <Type>0</Type>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT5>
               <OCR_RVCT6>
                 <Type>0</Type>
@@ -299,13 +339,13 @@
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress>0x1fff8000</StartAddress>
-                <Size>0x2f000</Size>
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x1000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x200f0000</StartAddress>
-                <Size>0x1000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -321,11 +361,11 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>1</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>0</uGnu>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -336,9 +376,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>HC32F46x,USE_DEVICE_DRIVER_LIB,CS9511_CONFIG,PLAT_HC32D391</Define>
+              <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\cmsis\Include;.\device\common;.\driver\inc;.\user</IncludePath>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -367,7 +407,7 @@
             <RepFail>1</RepFail>
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
-            <DataAddressRange>0x1FFF8000</DataAddressRange>
+            <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
@@ -380,278 +420,10 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>cmsis</GroupName>
-          <Files>
-            <File>
-              <FileName>startup_hc32f46x.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\device\common\startup_hc32f46x.s</FilePath>
-            </File>
-            <File>
-              <FileName>system_hc32f46x.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\device\common\system_hc32f46x.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>lib</GroupName>
-          <Files>
-            <File>
-              <FileName>hc32f46x_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_adc.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_aes.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_can.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_clk.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_clk.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_cmp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_cmp.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_crc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_crc.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_dcu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_dcu.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_dmac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_dmac.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_efm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_efm.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_emb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_emb.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_event_port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_event_port.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_exint_nmi_swi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_exint_nmi_swi.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_hash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_hash.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_i2s.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_i2s.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_icg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_icg.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_interrupts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_interrupts.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_keyscan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_keyscan.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_mpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_mpu.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_ots.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_ots.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_pwc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_pwc.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_qspi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_qspi.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_rmu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_rmu.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_rtc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_rtc.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_sdioc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_sdioc.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_sram.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_sram.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_swdt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_swdt.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer0.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer4_cnt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer4_cnt.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer4_emb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer4_emb.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer4_oco.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer4_oco.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer4_pwm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer4_pwm.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer4_sevt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer4_sevt.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timer6.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timer6.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_timera.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_timera.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_trng.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_trng.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_utility.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_utility.c</FilePath>
-            </File>
-            <File>
-              <FileName>hc32f46x_wdt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\src\hc32f46x_wdt.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>user</GroupName>
-          <Files>
-            <File>
-              <FileName>Apply.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\Apply.c</FilePath>
-            </File>
-            <File>
-              <FileName>Apply.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\user\Apply.h</FilePath>
-            </File>
-            <File>
-              <FileName>init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\init.c</FilePath>
-            </File>
-            <File>
-              <FileName>init.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\user\init.h</FilePath>
-            </File>
-            <File>
-              <FileName>isr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\isr.c</FilePath>
-            </File>
-            <File>
-              <FileName>isr.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\user\isr.h</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\main.c</FilePath>
-            </File>
-          </Files>
+          <GroupName>Source Group 1</GroupName>
         </Group>
       </Groups>
     </Target>
   </Targets>
-
-  <RTE>
-    <apis/>
-    <components/>
-    <files/>
-  </RTE>
 
 </Project>
